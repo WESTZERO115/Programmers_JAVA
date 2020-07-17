@@ -1,0 +1,32 @@
+import java.util.*;
+
+public class Solution {
+    public int[] solution(int []arr) {
+        int[] answer = {};
+        ArrayList<Integer> temp = new ArrayList<Integer>();
+        
+        for(int i =0; i<arr.length-1; i++) {
+            if(arr[i]==arr[i+1]) {
+                if(i==arr.length-2) {
+                    //마지막 i라면
+                    temp.add(arr[i+1]);
+                }
+                continue;
+            }else{    
+                temp.add(arr[i]);
+                if(i==arr.length-2) {
+                    //마지막 i라면
+                    temp.add(arr[i+1]);
+                }
+            }
+        }
+       
+        // [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
+        //System.out.println(answer);
+        answer = new int[temp.size()];
+        for(int i =0; i<temp.size();i++) {
+            answer[i] = temp.get(i);
+        }
+        return answer;
+    }
+}
