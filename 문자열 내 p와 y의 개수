@@ -1,0 +1,31 @@
+class Solution {
+    boolean solution(String s) {
+        boolean answer = true;
+        int numP = 0;
+        int numY = 0;
+    
+        char[] array_s = new char[s.length()];
+        for(int i=0;i<array_s.length;i++){ 
+	        array_s[i]=(s.charAt(i));//스트링을 한글자씩 끊어 배열에 저장
+        }   
+        
+       for(int i=0; i<array_s.length; i++){
+           if(array_s[i]=='p' || array_s[i]=='P')
+               numP++;
+           else if(array_s[i]=='y' || array_s[i]=='Y')
+               numY++;
+       }
+        if(numP == numY)
+            return answer;
+        else if(numP != numY){
+            answer = false;
+            return answer;
+        }
+        else
+            return answer;
+    }
+}
+
+//1.문자열을 비교하기 위해 한 글자 씩 배열에 저장. ******
+//2.char타입을 비교하므로 equals함수 사용X.
+//3.char타입 비교는 ' 사용. String타입은 "
